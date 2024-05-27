@@ -1,4 +1,4 @@
-import Node  from "./Node.js"
+import Node from "./Node.js"
 
 class BST {
     #root
@@ -33,6 +33,7 @@ class BST {
                 return this.insertNode(node.right, value)
         }
     }
+    
     search(value) {
         return this.searchNode(this.#root, value);
     }
@@ -41,17 +42,16 @@ class BST {
         if (node === null) {
             return "Valor no encontrado";
         }
-        if (node.value.isbn === value) { 
-            return `${node.value.isbn + " " + node.value.titulo} se ha encontrado`; 
+        if (node.value.isbn === value.isbn) {
+            return `${node.value.isbn}  ${node.value.titulo} se ha encontrado`;
         }
-        if (value < node.value.isbn) {
+        if (value.isbn < node.value.isbn) {
             return this.searchNode(node.left, value);
         } else {
             return this.searchNode(node.right, value);
         }
     }
 
-    
     inOrderTraversal(callback) {
         this.inOrderRecorrido(this.#root, callback);
     }
@@ -64,30 +64,31 @@ class BST {
         }
     }
 
-
     min() {
-        return this.minNode(this.#root);
+        const minNode = this.minNode(this.#root);
+        return minNode ? minNode.value : "El árbol está vacío";
     }
+
     minNode(node) {
-        if (node != null && node.left != null) { 
+        if (node != null && node.left != null) {
             return this.minNode(node.left);
-        }
-        else{
+        } else {
             return node;
         }
     }
 
     max() {
-        return this.maxNode(this.#root);
+        const maxNode = this.maxNode(this.#root);
+        return maxNode ? maxNode.value : "El árbol está vacío";
     }
+
     maxNode(node) {
-        if (node != null && node.right != null) { 
+        if (node != null && node.right != null) {
             return this.maxNode(node.right);
-        }
-        else{
+        } else {
             return node;
         }
     } 
 }
 
-export default BST
+export default BST;
