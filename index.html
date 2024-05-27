@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css
+    " rel="stylesheet">
+    
+    <title>Gestión de contactos</title>
+    <link rel="stylesheet" href="index.css"> 
+</head>
+<body>
+    <form>
+        <input id="autor" type="text" placeholder="Autor">
+        <input id="titulo" type="text" placeholder="Titulo">
+        <input id="isbn" type="text" placeholder="ISBN">
+        <button id="biblioteca-btn" type="button" class="btn btn-primary">Add</button>
+        <input id="search_ISBN" type="text" placeholder="Search by ISBN">
+        <button id="search-btn" type="button" class="btn btn-secondary">Search</button>
+        <button id="minValue-btn" type="button" class="btn btn-terceary">Minimum Value</button>
+        <button id="maxValue-btn" type="button" class="btn btn-cuartario">Maximum Value</button>
+        <button id="show-all-btn" type="button" class="btn btn-info">Mostrar todos los libros</button>
+    </form>
+  
+    <div id="libros-list"></div>
+    <script type="module" src="./src/controllers/script.js"></script>
+</body>
+</html>

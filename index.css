@@ -1,0 +1,90 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("img/888841-library-background-images-2880x1800-download-free.jpg");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+form {
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #f2efeb; 
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #c07206; 
+    outline: none;
+}
+
+
+form button#biblioteca-btn,
+form button#search-btn,
+form button#minValue-btn,
+form button#maxValue-btn,
+form button#show-all-btn {
+    width: calc(100% - 20px);
+    padding: 12px;
+    background-color: #6d533a;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+form button:hover {
+    background-color: #554435;
+    
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Estilos para la lista de libros */
+#libros-list {
+    margin-top: 20px;
+    width: 350px;
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#libros-list div {
+    padding: 10px;
+    border-bottom: 1px solid #b58a56; 
+}
+
+#libros-list div:last-child {
+    border-bottom: none;
+}
