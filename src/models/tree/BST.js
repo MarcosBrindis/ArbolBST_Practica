@@ -41,10 +41,10 @@ class BST {
         if (node === null) {
             return "Valor no encontrado";
         }
-        if (node.value.isbn === value.isbn) {
-            return `${node.value.isbn+"  "+node.value.titulo} se encontrado`;
+        if (node.value.isbn === value) { 
+            return `${node.value.isbn + " " + node.value.titulo} se ha encontrado`; 
         }
-        if (value.isbn < node.value.isbn) {
+        if (value < node.value.isbn) {
             return this.searchNode(node.left, value);
         } else {
             return this.searchNode(node.right, value);
@@ -69,24 +69,25 @@ class BST {
         return this.minNode(this.#root);
     }
     minNode(node) {
-        let current = node;
-        while (current != null && current.left != null) { 
-            current = current.left; 
+        if (node != null && node.left != null) { 
+            return this.minNode(node.left);
         }
-        return current;
+        else{
+            return node;
+        }
     }
 
     max() {
         return this.maxNode(this.#root);
     }
     maxNode(node) {
-        let current = node;
-        while (current != null && current.right != null) {
-            current = current.right;
+        if (node != null && node.right != null) { 
+            return this.maxNode(node.right);
         }
-        return current;
-    }
-    
+        else{
+            return node;
+        }
+    } 
 }
 
 export default BST
